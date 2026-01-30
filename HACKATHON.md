@@ -1,452 +1,309 @@
-# 🌍 Who Governs You?
+# 🏆 NEAR Innovation Sandbox Hackathon 2026
 
-## A Personal AI Political Agent for Every Human on Earth
-
-### NEAR Innovation Sandbox | "AI That Works For You"
+## Track: "AI That Works For You"
 
 ---
 
-## The Problem
+# 🌍 WHO GOVERNS YOU?
 
-Ask anyone on Earth: *"How many people govern you right now?"*
-
-They won't know.
-
-Ask: *"How many laws apply to you right now?"*
-
-They have no idea.
-
-**Democracy is broken because people don't know who's in charge.** You can't participate in a system you can't see. You can't hold accountable people you don't know exist.
+**A personal AI political agent for every human on Earth.**
 
 ---
 
-## The Solution: Two Numbers
+## 💡 The Pitch (30 seconds)
 
-Wherever you are standing — right now — this agent shows you:
-
-```
-┌────────────────────────────────────────────┐
-│                                            │
-│         WHO GOVERNS YOU RIGHT NOW?         │
-│                                            │
-│         ┌──────────┐   ┌──────────┐        │
-│         │    33    │   │  12,847  │        │
-│         │  PEOPLE  │   │   LAWS   │        │
-│         └──────────┘   └──────────┘        │
-│                                            │
-│         📍 San Francisco, California       │
-│                                            │
-└────────────────────────────────────────────┘
-```
-
-**33 people** are making decisions that affect your life.  
-**12,847 laws** tell you what you can and cannot do.
-
-Tap either number. See exactly who. See exactly what.
-
-**The agent figures this out automatically based on your physical location.** You don't research anything. You don't look anything up. The agent does all the work.
+> "Right now, 33 people govern you and 12,847 laws apply to you — based on where you're standing. You don't know who they are. Your agent does. It discovers them, monitors for changes, and notifies you when elections shift your representation. You close the tab. The agent keeps working."
 
 ---
 
-## The One Job
+## 🎯 The Problem
 
-> **"Tell me who governs me, and keep me informed when it changes."**
+8 billion humans are governed by people they can't name, under laws they've never read.
 
-This is an AI agent with one job — and it does it end-to-end:
+- **Quiz:** Name your city council members. (You can't.)
+- **Quiz:** How many federal regulations apply to your work? (You have no idea.)
+- **Quiz:** Your state representative just lost their primary. (You didn't know there was an election.)
 
-| What The Agent Does | Automatically |
-|---------------------|---------------|
-| **Discovers** | Finds every official and law in your jurisdiction |
-| **Counts** | "33 people, 12,847 laws govern you here" |
-| **Drills down** | Mayor, city council, governor, senators, president... |
-| **Monitors** | Watches for elections, new laws, resignations |
-| **Notifies** | "Your new mayor is..." / "This law now applies to you..." |
-| **Suggests** | "Your rep votes against your priorities 73% of the time" |
+Democracy assumes informed citizens. The information exists — scattered across thousands of government websites, updated inconsistently, formatted for lawyers not humans.
 
-**You close the tab. The agent keeps working.**
+**No one has time to research this. So no one does.**
 
 ---
 
-## 🎯 Track Fit: "AI That Works For You"
+## ✨ The Solution
 
-| Requirement | How We Deliver |
-|-------------|----------------|
-| **Autonomous system** | Agent discovers governance, monitors changes, notifies — without user interaction |
-| **Works after tab closes** | Background monitoring for elections, laws, redistricting |
-| **Clear boundaries** | Agent CAN: discover, count, notify, suggest. Agent CANNOT: take action without approval |
-| **User-owned memory** | All governance data on NEAR blockchain — inspect, export, delete, revoke |
-| **Payments in workflow** | Allocation is auditable and constrained |
-| **Real job-to-be-done** | "I want to know who governs me without spending hours researching" |
-| **One bounded job** | Discover who governs you. Keep it current. That's it. |
+**One AI agent per human that:**
 
-**Not a chatbot. Not a demo. An agent that does one job for every human on Earth.**
+1. **Discovers** every official who governs you (location-based)
+2. **Counts** every law that applies to you
+3. **Allocates** your political voice across the status quo
+4. **Monitors** for changes (elections, new laws, redistricting)
+5. **Notifies** you when something changes
+6. **Suggests** actions (vote, contact, donate, organize)
 
----
-
-## What The Agent Discovers
-
-### The People (Your 33 Officials)
-
-```
-LOCAL (12 people)                    Your city
-├─ Mayor                             London Breed
-├─ Board of Supervisors (11)         Your district: Matt Dorsey
-├─ City Attorney                     David Chiu
-├─ District Attorney                 Brooke Jenkins
-├─ Sheriff                           Paul Miyamoto
-├─ School Board (7)                  ...
-└─ Community College Board (7)       ...
-
-COUNTY (5 people)                    San Francisco County
-├─ Assessor-Recorder                 Joaquín Torres
-├─ Public Defender                   Mano Raju
-├─ Treasurer                         José Cisneros
-└─ ...
-
-STATE (8 people)                     California
-├─ Governor                          Gavin Newsom
-├─ Lieutenant Governor               Eleni Kounalakis
-├─ State Senator                     Scott Wiener (Dist. 11)
-├─ Assemblymember                    Matt Haney (Dist. 17)
-├─ Attorney General                  Rob Bonta
-└─ ...
-
-FEDERAL (8 people)                   United States
-├─ President                         [current]
-├─ Vice President                    [current]
-├─ U.S. Senators (2)                 Alex Padilla, Laphonza Butler
-├─ U.S. Representative               Nancy Pelosi (Dist. 11)
-└─ ...
-```
-
-### The Laws (Your 12,847 Laws)
-
-```
-FEDERAL                              ~3,000 statutes + regulations
-├─ U.S. Code                         Titles 1-54
-├─ Code of Federal Regulations       Applicable sections
-└─ Executive Orders                  Currently active
-
-STATE                                ~5,500 statutes + regulations  
-├─ California Codes                  29 codes
-├─ California Code of Regulations    Title 1-28
-└─ Governor's Executive Orders       Currently active
-
-LOCAL                                ~4,300 ordinances + codes
-├─ San Francisco Municipal Code      Divisions I-IV
-├─ Building Code                     ...
-├─ Planning Code                     ...
-├─ Health Code                       ...
-└─ Police Code                       ...
-```
-
-**All of this — automatically discovered based on where you're standing.**
+**The killer feature:** You close the tab. The agent keeps working.
 
 ---
 
-## The Experience
+## 📊 Two Numbers
 
-### Step 1: Prove You're Human
+Based on a sample location (San Francisco, CA):
 
-```
-┌─────────────────────────────────────────┐
-│                                         │
-│      🌍 Sign in with World ID           │
-│                                         │
-│   Prove you're a unique human.          │
-│   No name. No ID. Just proof.           │
-│                                         │
-│   ┌─────────────────────────────────┐   │
-│   │      🔐 Verify with World ID    │   │
-│   └─────────────────────────────────┘   │
-│                                         │
-│   One person = one political agent      │
-│                                         │
-└─────────────────────────────────────────┘
-```
+### The 33 People Who Govern You
 
-### Step 2: See Who Governs You
+| Level | Officials | Count |
+|-------|-----------|-------|
+| **City** | Mayor, Board of Supervisors, City Attorney, DA, Sheriff | 14 |
+| **County** | (SF is city-county consolidated) | — |
+| **State** | Governor, Lt. Gov, AG, State Senator, Assemblymember | 5 |
+| **Federal** | President, VP, 2 Senators, 1 Representative | 5 |
+| **Judicial** | Local judges → CA Supreme → SCOTUS | 9 |
 
-```
-┌─────────────────────────────────────────┐
-│                                         │
-│   🤖 Agent: Discovery Complete          │
-│                                         │
-│   Based on your location:               │
-│   📍 San Francisco, California          │
-│                                         │
-│   ┌─────────────┐   ┌─────────────┐     │
-│   │     33      │   │   12,847    │     │
-│   │   PEOPLE    │   │    LAWS     │     │
-│   │  govern you │   │  apply to   │     │
-│   │    here     │   │    you      │     │
-│   └─────────────┘   └─────────────┘     │
-│                                         │
-│   ┌─────────────────────────────────┐   │
-│   │      Explore Who They Are →     │   │
-│   └─────────────────────────────────┘   │
-│                                         │
-└─────────────────────────────────────────┘
-```
+**Click any name → voting record, contact info, upcoming elections, campaign finance**
 
-### Step 3: Drill Down
+### The 12,847 Laws That Apply to You
+
+| Level | Category | Count |
+|-------|----------|-------|
+| **Federal** | Statutes, CFR regulations | 4,200 |
+| **California** | State laws, admin code | 6,100 |
+| **San Francisco** | Municipal code, ordinances | 2,547 |
+
+**Search any keyword → plain-English summary, who voted for it, how to challenge it**
+
+---
+
+## 🤖 Agent Architecture
 
 ```
-┌─────────────────────────────────────────┐
-│  ← Back         YOUR 33 OFFICIALS       │
-├─────────────────────────────────────────┤
-│                                         │
-│  LOCAL (12)                             │
-│  ├─ Mayor: London Breed                 │
-│  ├─ Your Supervisor: Matt Dorsey        │
-│  ├─ City Attorney: David Chiu           │
-│  └─ [tap to see all 12]                 │
-│                                         │
-│  STATE (8)                              │
-│  ├─ Governor: Gavin Newsom              │
-│  ├─ Your Senator: Scott Wiener          │
-│  ├─ Your Assemblymember: Matt Haney     │
-│  └─ [tap to see all 8]                  │
-│                                         │
-│  FEDERAL (8)                            │
-│  ├─ President: [current]                │
-│  ├─ Your Rep: Nancy Pelosi              │
-│  └─ [tap to see all 8]                  │
-│                                         │
-└─────────────────────────────────────────┘
-```
-
-### Step 4: Close The Tab — Agent Keeps Working
-
-```
-┌─────────────────────────────────────────┐
-│                                         │
-│   🔔 NOTIFICATION                       │
-│                                         │
-│   Election Results: Your district       │
-│   elected a new supervisor.             │
-│                                         │
-│   Old: [previous]                       │
-│   New: [new official]                   │
-│                                         │
-│   Your governance profile updated.      │
-│                                         │
-│   ┌─────────────────────────────────┐   │
-│   │         View Changes →          │   │
-│   └─────────────────────────────────┘   │
-│                                         │
-└─────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────┐
+│                         USER JOURNEY                                 │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  1. VERIFY                                                          │
+│     └── World ID ZK proof → confirms human, preserves privacy       │
+│                                                                      │
+│  2. CLAIM                                                           │
+│     └── Receive birthright TIME (1 token per day lived)             │
+│     └── 30-year-old = 10,958 TIME to allocate                       │
+│                                                                      │
+│  3. DISCOVER (Agent takes over)                                     │
+│     └── Agent queries: "Where are you?"                             │
+│     └── GPS/IP → jurisdiction mapping                               │
+│     └── Returns: "33 officials, 12,847 laws"                        │
+│                                                                      │
+│  4. ALLOCATE (Automatic)                                            │
+│     └── Default: TIME distributed across status quo                 │
+│     └── Weighting: Local 30%, State 25%, Federal 20%, etc.          │
+│     └── User can override and reallocate manually                   │
+│                                                                      │
+│  5. MONITOR (Background)                                            │
+│     └── Daily: Check for new laws, regulations                      │
+│     └── Weekly: Scan upcoming elections in jurisdiction             │
+│     └── On-event: Election results → rebalance allocations          │
+│                                                                      │
+│  6. NOTIFY                                                          │
+│     └── "Your state senator lost their primary"                     │
+│     └── "New city ordinance affects your neighborhood"              │
+│     └── "Voter registration deadline in 14 days"                    │
+│                                                                      │
+│  7. SUGGEST                                                         │
+│     └── "Contact your representative about [issue]"                 │
+│     └── "Upcoming town hall you might attend"                       │
+│     └── "Candidate aligned with your allocations needs volunteers"  │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Autonomous Agent Behavior
+## ✅ Track Fit: "AI That Works For You"
 
-### What Happens While You're Away
+| Requirement | Our Implementation |
+|-------------|--------------------|
+| **"Keeps working after user closes tab"** | Agent runs scheduled jobs: daily law checks, weekly election scans, real-time redistricting alerts |
+| **"Clear boundary for what system can/cannot do"** | CAN: discover, monitor, notify, suggest. CANNOT: vote on your behalf, transfer TIME without explicit approval, take political action in your name |
+| **"User-owned memory"** | All governance data stored on-chain (NEAR). User can: inspect full profile, export to any format, delete entirely, revoke agent permissions |
+| **"Saves time"** | Replaces hours of research with instant answers: "Who represents me?" → 2 seconds |
+| **"Unlocks workflow previously not practical"** | Continuous political awareness was impossible for individuals. Now it's automatic. |
 
-```javascript
-// Agent runs continuously — you don't need to be there
+---
 
-// Daily: Check for election results
-agent.schedule('0 6 * * *', async (user) => {
-  const elections = await civicAPI.getElectionResults(user.jurisdiction);
-  if (elections.newOfficials.length > 0) {
-    await agent.updateGovernanceProfile(user, elections);
-    await agent.notify(user, {
-      title: 'Election Results',
-      body: `${elections.newOfficials.length} new officials elected in your area`
-    });
-  }
+## 🔗 Sponsor Integrations
+
+### NOVA — Encrypted Governance Profile
+
+Your political profile (location, allocations, engagement history) stored in NOVA's privacy vault. The agent accesses it to personalize recommendations. No one else can see it — not even us.
+
+**Integration point:** `nova.store(governanceProfile)` / `nova.retrieve(agentKey)`
+
+### HOT KIT — Omni-Chain Political Identity
+
+Your TIME tokens may exist across multiple chains (NEAR, Base, Ethereum). HOT KIT provides unified balance view and seamless transfers.
+
+**Integration point:** `hotkit.getBalance(worldId)` / `hotkit.transfer(from, to, amount)`
+
+### PingPay — Agent-Initiated Donations
+
+When you allocate TIME to a candidate or cause, your agent can accept micro-donations on their behalf. PingPay handles the payment rails.
+
+**Integration point:** `pingpay.createCampaignLink(candidate)` / `pingpay.processDonation(amount)`
+
+---
+
+## 🏗️ Technical Architecture
+
+### Smart Contract (Rust/NEAR)
+
+```rust
+// Core structures
+pub struct Citizen {
+    world_id_nullifier: String,      // ZK proof hash
+    birthdate: u64,                   // For TIME calculation
+    jurisdiction: Jurisdiction,       // Current location
+    time_balance: u128,              // Birthright + earned
+    staked_time: u128,               // Allocated to governance
+    governance_profile: GovernanceProfile,
+}
+
+pub struct GovernanceProfile {
+    officials: Vec<Official>,        // The 33 people
+    laws: Vec<LawReference>,         // The 12,847 laws
+    allocations: HashMap<EntityId, u128>,  // How TIME is distributed
+    last_updated: u64,
+}
+
+// Key functions
+fn claim_birthright(world_id_proof: Proof) -> Result<u128>;
+fn discover_governance(location: Location) -> GovernanceProfile;
+fn allocate_time(entity_id: EntityId, amount: u128) -> Result<()>;
+fn get_notifications() -> Vec<Notification>;
+```
+
+### Frontend (Next.js + World ID)
+
+```typescript
+// World ID verification
+const { result } = await IDKit.verify({
+  app_id: process.env.WORLD_ID_APP_ID,
+  action: "claim_time_birthright",
 });
 
-// Weekly: Check for new laws
-agent.schedule('0 0 * * 0', async (user) => {
-  const newLaws = await legalAPI.getNewLaws(user.jurisdiction);
-  if (newLaws.length > 0) {
-    await agent.updateLawCount(user, newLaws);
-    await agent.notify(user, {
-      title: 'New Laws',
-      body: `${newLaws.length} new laws now apply to you`
-    });
-  }
-});
+// Agent discovery
+const profile = await agent.discoverGovernance(userLocation);
+// Returns: { officials: [...], laws: [...], allocations: {...} }
 
-// On redistricting
-agent.on('REDISTRICTING_EVENT', async (user) => {
-  const newDistrict = await civicAPI.getNewDistrict(user.location);
-  await agent.fullRediscovery(user);
-  await agent.notify(user, {
-    title: 'District Changed',
-    body: 'Your district boundaries changed. Governance profile updated.'
+// Continuous monitoring
+useEffect(() => {
+  const unsubscribe = agent.subscribe((notification) => {
+    // "Your representative voted on..."
+    // "Election results updated..."
   });
-});
-```
-
-### Clear Boundaries
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    AGENT CAPABILITIES                        │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ✅ CAN DO (Autonomous)                                     │
-│  • Discover officials in your jurisdiction                  │
-│  • Count laws that apply to you                             │
-│  • Monitor for elections, new laws, redistricting           │
-│  • Send notifications when things change                    │
-│  • Suggest actions based on your priorities                 │
-│  • Log all actions with explanations                        │
-│                                                             │
-│  ❌ CANNOT DO (Hard Limits)                                 │
-│  • Take any action on your behalf                           │
-│  • Access your precise location (only jurisdiction)         │
-│  • Share your data without permission                       │
-│  • Act without logging to audit trail                       │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+  return unsubscribe;
+}, []);
 ```
 
 ---
 
-## 🏆 Sponsor Integrations
-
-### NOVA — Private Storage
-
-Your political preferences are sensitive. They stay encrypted.
-
-```typescript
-// Store governance profile in encrypted vault
-const vault = await Nova.createVault({
-  name: 'my-governance-profile',
-  encryption: 'user-owned'
-});
-
-await vault.store({
-  jurisdiction: 'san-francisco-ca',
-  officials: discoveredOfficials,  // 33 people
-  laws: discoveredLaws,            // 12,847 laws
-  preferences: userPreferences,
-  auditLog: agentActions
-});
-
-// Agent retrieves via intents (zero-exposure)
-const profile = await Nova.intentQuery(vault, 'get-officials');
-```
-
-**NOVA Prize Alignment**: Privacy vaults, user-owned AI, zero-exposure
-
----
-
-### HOT KIT — Any Wallet
-
-Connect from any chain. See your data everywhere.
-
-```typescript
-// Connect any wallet
-const wallet = await HotKit.connect({
-  supportedChains: ['near', 'ethereum', 'base']
-});
-
-// Build intents
-const intent = HotKit.buildIntent({
-  action: 'subscribe-notifications',
-  jurisdiction: 'san-francisco-ca'
-});
-```
-
-**HOT KIT Prize Alignment**: Multi-chain wallet, intent-based flows
-
----
-
-### PingPay — Agent Payments
-
-Agent can execute payments autonomously (with your permission).
-
-```typescript
-// Fiat onramp
-const onramp = await PingPay.createOnramp({
-  fiatAmount: 10,
-  outputToken: 'GOVERNANCE_TOKEN'
-});
-
-// Agent-initiated (the key feature)
-await PingPay.batchTransfer({
-  from: userWallet,
-  transfers: allocationBatch,
-  authorization: 'agent-permission'
-});
-
-// Shareable link
-const link = await PingPay.createPaymentLink({
-  recipient: 'mayor-sf-campaign',
-  title: 'Support Your Mayor'
-});
-```
-
-**PingPay Prize Alignment**: AI + payments, agent-initiated transactions
-
----
-
-## Why This Will Be Used
-
-### The Triggers
-
-| Life Event | Agent Response |
-|------------|----------------|
-| **Election day** | "Here's who won. Your profile is updated." |
-| **You move** | "New location detected. Here's who governs you now." |
-| **Law passed** | "This new law affects you. Here's what it does." |
-| **Official resigns** | "Your rep resigned. Here's the replacement." |
-| **Redistricting** | "Your district changed. New representatives assigned." |
-
-### The Scale
-
-- **World ID**: 10M+ verified humans ready to use this
-- **NEAR Legion**: ~4,000 early adopters for testing
-- **The Great Reset**: January 1, 2034 — global coordinated launch
-
----
-
-## Team: Democracy Earth Foundation
-
-**Herb Stephens** — Co-founder  
-**Santiago Siri** — Co-founder
-
-Building decentralized democracy since 2015:
-- Democracy OS — Open source voting (2012)
-- Proof of Humanity — Sybil-resistant identity (2021)
-- UBI Token — Universal basic income (2021)
-
----
-
-## Repository Structure
+## 📁 Repository Structure
 
 ```
-├── README.md              # Vision and overview
-├── HACKATHON.md           # This document
-├── frontend/              # Next.js app with World ID
-├── contracts/             # Rust smart contract on NEAR
+NEAR-Innovation-Sandbox-2026/
+├── README.md                    # Project overview (you are here)
+├── HACKATHON.md                 # Full submission document
+├── contracts/
+│   └── rust/
+│       ├── Cargo.toml
+│       └── src/
+│           └── lib.rs           # TIME Protocol smart contract
+├── frontend/
+│   ├── package.json
+│   ├── .env.example
+│   └── src/app/
+│       ├── page.tsx             # Main UI with World ID
+│       └── api/verify/route.ts  # ZK proof verification
 └── docs/
-    ├── ARCHITECTURE.md    # Technical design
+    ├── ARCHITECTURE.md
     └── SPONSOR-INTEGRATIONS.md
 ```
 
 ---
 
-## Summary
+## 🚀 Demo Flow
 
-**One question**: Who governs you right now?
+**Screen 1: Landing**
+> "Who governs you right now?"
+> [Verify with World ID]
 
-**Two numbers**: X people. Y laws.
+**Screen 2: Verification**
+> World ID orb scan / phone verification
+> ZK proof generated (no identity revealed)
 
-**One agent**: Discovers them. Monitors them. Notifies you.
+**Screen 3: Claim**
+> "You are 34 years old. You have earned 12,419 TIME."
+> "TIME = your political voice. 1 day = 1 TIME."
+> [Claim Birthright TIME]
 
-**8 billion humans**: Each gets their own political agent.
+**Screen 4: Discovery**
+> Agent working...
+> "Based on your location:"
+> **33 PEOPLE** govern you
+> **12,847 LAWS** apply to you
+> [See Details] [Auto-Allocate]
+
+**Screen 5: Dashboard**
+> Officials list (expandable)
+> Law categories (searchable)
+> Allocation sliders
+> Notification feed
+> "Close this tab — your agent keeps working."
 
 ---
+
+## 👥 Team
+
+### Herb Stephens
+**Co-founder, Democracy Earth Foundation**
+- TIME Protocol architect
+- The Great Reset author
+- Building governance systems since 2015
+
+### Santiago Siri
+**Co-founder, Democracy Earth Foundation**
+- Democracy OS creator (2012)
+- Proof of Humanity pioneer — **PoH #1**
+- UBI Token architect
+
+**Combined experience:** 20+ years building open-source democracy tools
+
+---
+
+## 🎯 Judging Criteria Response
+
+| Criteria | Evidence |
+|----------|----------|
+| **Working, deployable product** | Smart contract compiles, frontend runs, World ID integration functional |
+| **Engage with feedback** | Democracy Earth has iterated on governance tools since 2012. We ship and learn. |
+| **Credible path to adoption** | World ID: 10M+ verified humans. NEAR: existing governance community. The Great Reset: Jan 1, 2034 target with detailed roadmap. |
+
+---
+
+## 🌍 The Vision
+
+**Today:** You don't know who governs you.
+
+**Tomorrow:** Every human has an agent that does.
+
+**8 billion agents. 8 billion informed citizens. Real democracy.**
+
+---
+
+## 📜 License
+
+MIT — Democracy Earth Foundation
+
+---
+
+*The Great Reset: January 1, 2034*
 
 *"You can't govern yourself if you don't know who's governing you."*
-
----
-
-**The Great Reset: January 1, 2034**

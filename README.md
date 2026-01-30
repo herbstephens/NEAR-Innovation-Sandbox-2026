@@ -2,165 +2,184 @@
 
 **A personal AI political agent for every human on Earth.**
 
-Right now, wherever you are standing, there are people making decisions about your life — and laws constraining what you can do. But you don't know who they are. You don't know how many there are. You don't know when they change.
-
-**This agent tells you.**
-
 ---
 
 ## Two Numbers
 
-Open the app. The agent figures out where you are and instantly shows you:
+Right now, based on where you're physically standing:
 
-```
-┌────────────────────────────────────────────┐
-│                                            │
-│         WHO GOVERNS YOU RIGHT NOW?         │
-│                                            │
-│         ┌──────────┐   ┌──────────┐        │
-│         │    33    │   │  12,847  │        │
-│         │  PEOPLE  │   │   LAWS   │        │
-│         └──────────┘   └──────────┘        │
-│                                            │
-│         📍 San Francisco, California       │
-│                                            │
-└────────────────────────────────────────────┘
-```
+| | |
+|---|---|
+| **33 PEOPLE** | govern you |
+| **12,847 LAWS** | apply to you |
 
-**33 people** are making decisions that affect your daily life.  
-**12,847 laws** tell you what you can and cannot do.
+You don't know who they are. You don't know what the laws say. And when elections change things — no one tells you.
 
-Tap either number to see exactly who and what.
+**Your agent does.**
 
 ---
 
-## What The Agent Does
+## The Problem
 
-### 1. Discovers Your Governance (Automatically)
+Democracy assumes informed citizens. But:
 
-Based on your physical location right now, the agent identifies:
+- Most people can't name their city council members
+- No one knows how many laws apply to them
+- Elections happen, representatives change — and nothing alerts you
+- Civic engagement requires research most people won't do
 
-- **Local**: Mayor, city council, school board, sheriff...
-- **County**: Supervisors, assessor, district attorney...
-- **State**: Governor, legislators, attorney general...
-- **Federal**: President, senators, representative...
-- **Laws**: Every statute, ordinance, and regulation that applies to you
-
-You don't research anything. The agent does it all.
-
-### 2. Notifies You When Things Change
-
-- 🗳️ **Election results** → "Your new mayor is..."
-- 📜 **New law passed** → "This now applies to you..."
-- 🔄 **Official resigns** → "Your representative changed..."
-- 📍 **You move** → "Here's who governs you now..."
-- 🗺️ **Redistricting** → "Your district boundaries changed..."
-
-You close the app. The agent keeps watching.
-
-### 3. Suggests Actions
-
-- "Your state senator is up for re-election in 47 days"
-- "A new housing ordinance affects your neighborhood"
-- "3 of your representatives voted against your stated priorities"
+**Result:** 8 billion humans governed by people they can't name, under laws they've never read.
 
 ---
 
-## Why This Matters
+## The Solution: One Agent Per Human
 
-**Democracy is broken because people don't know who governs them.**
+TIME Protocol gives every verified human a **personal AI governance agent** that:
 
-Ask anyone: *"How many elected officials represent you right now?"*
+1. **Discovers** who governs you (based on your location)
+2. **Counts** the laws that apply to you
+3. **Allocates** your political voice across the status quo
+4. **Monitors** for changes (elections, new laws, redistricting)
+5. **Notifies** you when something changes
+6. **Suggests** actions you can take
 
-They won't know. They might guess 5 or 10. The real number is often 30-50+.
-
-Ask: *"How many laws apply to you?"*
-
-They have no idea. It's thousands. Sometimes tens of thousands.
-
-**You can't participate in democracy if you don't know who's in charge.**
-
-This agent makes democracy visible. Two numbers. Updated automatically. For every human on Earth.
+**You close the tab. The agent keeps working.**
 
 ---
 
-## The Vision
-
-**January 1, 2034 — The Great Reset**
-
-Every human claims their political voice. Every human sees who governs them. Every human can finally participate.
-
-One agent per person. 8 billion agents. Global democracy infrastructure.
-
----
-
-## Try It
+## How It Works
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
-│   1. VERIFY  → Prove you're human (World ID)                │
+│   SIGN IN → Verify you're human (World ID)                  │
 │      ↓                                                      │
-│   2. LOCATE  → Agent determines your jurisdiction           │
+│   CLAIM  → Receive your TIME (1 per day lived)              │
 │      ↓                                                      │
-│   3. DISCOVER → "33 people and 12,847 laws govern you"      │
+│   AGENT DISCOVERS → "33 officials and 12,847 laws           │
+│                      govern you right now"                  │
 │      ↓                                                      │
-│   4. EXPLORE → Tap to see who they are, what they do        │
+│   AGENT ALLOCATES → Your TIME distributed across status quo │
 │      ↓                                                      │
-│   5. CLOSE TAB → Agent keeps monitoring for changes         │
+│   CLOSE TAB → Agent keeps monitoring...                     │
+│      ↓                                                      │
+│   ELECTION HAPPENS → Agent rebalances, notifies you         │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Technical Details
+## What the Agent Shows You
 
-For the technically curious:
+### The 33 People
 
-- **Frontend**: Next.js 14 with World ID integration
-- **Smart Contract**: Rust on NEAR blockchain
-- **Identity**: World ID zero-knowledge proofs (one person = one agent)
-- **Storage**: NOVA encrypted vaults (your political data stays private)
-- **Payments**: PingPay for agent-initiated transactions
-- **Multi-chain**: HOT KIT for any-wallet support
+| Level | Who | Count |
+|-------|-----|-------|
+| Local | Mayor, City Council | 6 |
+| County | Commissioners, Sheriff, DA | 8 |
+| State | Governor, Legislators, AG | 4 |
+| Federal | President, Senators, Rep | 4 |
+| Judicial | Judges (local → Supreme) | 11 |
 
-See `/docs` for architecture details.
+*Click any name → see their record, votes, contact info*
+
+### The 12,847 Laws
+
+| Level | Type | Count |
+|-------|------|-------|
+| Federal | Statutes & Regulations | 4,200 |
+| State | Laws & Admin Code | 6,100 |
+| County | Ordinances | 890 |
+| City | Municipal Code | 1,657 |
+
+*Search, filter, get plain-English summaries*
 
 ---
 
-## Repository Structure
+## Track: "AI That Works For You"
 
+| Requirement | How We Deliver |
+|-------------|----------------|
+| **Keeps working after tab closes** | Agent monitors elections, laws, redistricting 24/7 |
+| **Clear boundaries** | CAN: discover, monitor, notify. CANNOT: vote for you, transfer TIME without approval |
+| **User-owned memory** | All data on NEAR blockchain — inspect, export, delete, revoke |
+| **Saves time** | No more researching "who represents me" — agent knows |
+| **Unlocks new workflow** | Political engagement that was impractical is now automatic |
+
+---
+
+## Tech Stack
+
+- **NEAR Protocol** — Smart contracts, account model, agent infrastructure
+- **World ID** — One human = one agent (ZK proof, no identity revealed)
+- **TIME Token (NEP-141)** — Fungible, stakeable political voice
+- **Work NFT (NEP-171)** — Soulbound proof of civic contribution
+
+---
+
+## Sponsor Integrations
+
+### NOVA (Privacy Vault)
+Your governance profile stored encrypted — agent accesses it, no one else can.
+
+### HOT KIT (Multi-Chain Wallet)
+See your TIME balance across all chains. One unified political identity.
+
+### PingPay (Agent Payments)
+Agent can accept micro-donations on your behalf for causes you support.
+
+---
+
+## Quick Start
+
+```bash
+# Clone
+git clone https://github.com/herbstephens/NEAR-Innovation-Sandbox-2026.git
+cd NEAR-Innovation-Sandbox-2026
+
+# Frontend
+cd frontend
+cp .env.example .env.local
+# Add your World ID credentials
+npm install
+npm run dev
 ```
-├── frontend/          # The app you interact with
-├── contracts/         # Smart contract (Rust/NEAR)
-├── docs/              # Technical documentation
-├── HACKATHON.md       # Full submission details
-└── README.md          # You are here
-```
 
 ---
 
-## Team
+## Team: Democracy Earth Foundation
 
-**Democracy Earth Foundation**
+**Herb Stephens** — Co-founder, TIME Protocol architect  
+**Santiago Siri** — Co-founder, governance systems pioneer
 
-Building decentralized democracy since 2015.
+**Track Record:**
+- Democracy OS — Open source voting (2012)
+- Proof of Humanity — Sybil-resistant identity, PoH #1 (2021)
+- UBI Token — Universal basic income experiment (2021)
 
-- Democracy OS — Open source voting
-- Proof of Humanity — Sybil-resistant identity  
-- UBI Token — Universal basic income
+---
+
+## The Vision
+
+**8 billion humans. 8 billion agents.**
+
+Every person on Earth with a political agent that:
+- Knows who governs them
+- Keeps their voice allocated
+- Alerts them when things change
+- Suggests actions they can take
+
+**One agent per person. Global democracy infrastructure.**
 
 ---
 
-## NEAR Innovation Sandbox 2026
+## License
 
-**Track**: "AI That Works For You"
-
-This is an AI agent that does one job: **tell you who governs you and keep you informed when it changes.**
-
-It works after you close the tab. It's autonomous. It's yours.
+MIT — Democracy Earth Foundation
 
 ---
+
+*The Great Reset: January 1, 2034*
 
 *"You can't govern yourself if you don't know who's governing you."*
