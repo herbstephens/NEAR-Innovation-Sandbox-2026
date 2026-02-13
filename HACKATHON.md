@@ -594,7 +594,7 @@ Democracy Earth has been building decentralized governance since 2015:
 ### 2034 → The Great Reset
 - Every human has an agent
 - Complete parallel infrastructure
-- [github.com/democracyearth/the-great-reset](https://github.com/democracyearth/the-great-reset)
+- [github.com/herbstephens/NEAR-Innovation-Sandbox-2026](https://github.com/herbstephens/NEAR-Innovation-Sandbox-2026))
 
 ---
 
