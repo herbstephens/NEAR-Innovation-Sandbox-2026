@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Governance Agent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <div id="app"></div>
+
+    <script>
+        // State
+        let currentStep = 'welcome'; // welcome, verifying, discovering, dashboard
+        let user = null;
+        let governance = null;
+        let selectedLevel = null;
+        let agentResponse = null;
+
+        // Mock Data
+        const OFFICIALS = [
+            { name: 'Joe Biden', role: 'President', level: 'federal', party: 'D' },
+            { name: 'Kamala Harris', role: 'Vice President', level: 'federal', party: 'D' },
+            { name: 'Alex Padilla', role: 'U.S. Senator', level: 'federal', party: 'D' },
+            { name: 'Laphonza Butler', role: 'U.S. Senator', level: 'federal', party: 'D' },
+            { name: 'Nancy Pelosi', role: 'U.S. Representative', level: 'federal', party: 'D' },
+            { name: 'Gavin Newsom', role: 'Governor', level: 'state', party: 'D' },
+            { name: 'Eleni Kounalakis', role: 'Lt. Governor', level: 'state', party: 'D' },
+            { name: 'Scott Wiener', role: 'State Senator', level: 'state', party: 'D' },
+            { name: 'Phil Ting', role: 'State Assemblymember', level: 'state', party: 'D' },
+            { name: 'Mary Jung', role: 'Board of Supervisors President', level: 'county' },
+            { name: 'London Breed', role: 'Mayor', level: 'local', party: 'D' },
+            { name: 'Matt Dorsey', role: 'District 6 Supervisor', level: 'local', party: 'D' },
+            { name: 'Brooke Jenkins', role: 'District Attorney', level: 'local' },
+            { name: 'Paul Miyamoto', role: 'Sheriff', level: 'local' },
+            { name: 'Bill Scott', role: 'Police Chief', level: 'local' },
+        ];
+
+        const OPPORTUNITIES = [
+            { id: 'opp-1', title: "Maria's Panaderia Expansion", description: 'Local bakery needs new commercial oven', distance: '2.1 mi', goal: 5000, raised: 3200 },
+            { id: 'opp-2', title: 'TechRepair Collective', description: 'Worker-owned electronics repair seeking members', distance: '1.8 mi', goal: 10000, raised: 7500 },
+            { id: 'opp-3', title: 'Neighborhood Solar Project', description: 'Community solar for reduced electricity costs', distance: '0.5 mi', goal: 15000, raised: 8500 },
+            { id: 'opp-4', title: 'Local School Coding Program', description: 'Raspberry Pi kits for 30 students', distance: '1.2 mi', goal: 2000, raised: 500 },
+        ];
+
+        // Render functions
+        function render() {
+            const app = document.getElementById('app');
+            
+            if (currentStep === 'welcome') {
+                app.innerHTML = renderWelcome();
+            } else if (currentStep === 'verifying') {
+                app.innerHTML = renderVerifying();
+            } else if (currentStep === 'discovering') {
+                app.innerHTML = renderDiscovering();
+            } else if (currentStep === 'dashboard') {
+                app.innerHTML = renderDashboard();
+            }
+        }
+
+        function renderWelcome() {
+            return `
+                <div class="min-h-screen flex flex-col items-center justify-center p-8">
+                    <div class="max-w-2xl text-center">
+                        <h1 class="text-5xl font-bold mb-4">Your Governance Agent</h1>
+                        <p class="text-xl text-slate-300 mb-8">Know who governs you. Allocate locally. Build parallel.</p>
+                        
+                        <div class="bg-slate-800 rounded-2xl p-8 mb-8">
+                            <div class="flex justify-center gap-8 mb-6">
+                                <div class="text-center">
+                                    <div class="text-5xl font-bold text-emerald-400">33</div>
+                                    <div class="text-slate-400">Officials</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-5xl font-bold text-emerald-400">12,847</div>
+                                    <div class="text-slate-400">Laws</div>
+                                </div>
+                            </div>
+                            <p class="text-slate-300">govern you right now — and you don't know who they are.</p>
+                        </div>
+                        
+                        <button onclick="handleVerify()" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 px-8 rounded-xl text-xl transition-all cursor-pointer">
+                            Verify with World ID →
+                        </button>
+                        
+                        <p class="text-slate-500 mt-4 text-sm">One person. One agent. Powered by World ID.</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderVerifying() {
+            return `
+                <div class="min-h-screen flex flex-col items-center justify-center p-8">
+                    <div class="text-center">
+                        <div class="w-24 h-24 border-4 border-emerald-400 border-t-transparent rounded-full animate-spin mx-auto mb-6"></div>
+                        <h2 class="text-2xl font-bold mb-2">Verifying Humanity...</h2>
+                        <p class="text-slate-400">Connecting to World ID</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderDiscovering() {
+            return `
+                <div class="min-h-screen flex flex-col items-center justify-center p-8">
+                    <div class="text-center">
+                        <div class="w-24 h-24 border-4 border-emerald-400 border-t-transparent rounded-full animate-spin mx-auto mb-6"></div>
+                        <h2 class="text-2xl font-bold mb-2">Discovering Your Governance...</h2>
+                        <p class="text-slate-400">Finding officials and laws in your jurisdiction</p>
+                        <div class="mt-4 text-emerald-400 font-mono">📍 San Francisco, California, USA</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderDashboard() {
+            const officialsHtml = selectedLevel ? OFFICIALS
+                .filter(o => selectedLevel === 'all' || o.level === selectedLevel)
+                .map(o => `
+                    <div class="flex justify-between items-center py-2 border-b border-slate-700 last:border-0">
+                        <div>
+                            <div class="font-medium">${o.name}</div>
+                            <div class="text-sm text-slate-400">${o.role}</div>
+                        </div>
+                        <div class="text-xs text-slate-500 capitalize">${o.level}</div>
+                    </div>
+                `).join('') : '';
+
+            const opportunitiesHtml = OPPORTUNITIES.map(opp => `
+                <div class="bg-slate-700 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold">${opp.title}</h3>
+                        <span class="text-sm text-slate-400">${opp.distance}</span>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-3">${opp.description}</p>
+                    <div class="mb-3">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>${opp.raised.toLocaleString()} TIME raised</span>
+                            <span>${opp.goal.toLocaleString()} goal</span>
+                        </div>
+                        <div class="w-full bg-slate-600 rounded-full h-2">
+                            <div class="bg-emerald-500 h-2 rounded-full" style="width: ${(opp.raised / opp.goal) * 100}%"></div>
+                        </div>
+                    </div>
+                    <button onclick="handleAllocate('${opp.id}')" class="w-full bg-emerald-500 hover:bg-emerald-600 py-2 rounded font-bold cursor-pointer">
+                        Allocate TIME
+                    </button>
+                </div>
+            `).join('');
+
+            const agentResponseHtml = agentResponse ? `
+                <div class="mt-4 bg-slate-700 rounded-lg p-4 whitespace-pre-wrap text-sm">
+                    ${agentResponse}
+                </div>
+            ` : '';
+
+            return `
+                <header class="bg-slate-800 border-b border-slate-700 px-6 py-4">
+                    <div class="max-w-6xl mx-auto flex justify-between items-center">
+                        <div>
+                            <h1 class="text-xl font-bold">Your Governance Agent</h1>
+                            <p class="text-sm text-slate-400">📍 San Francisco, California, USA</p>
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <div class="text-right">
+                                <div class="text-emerald-400 font-bold">${user.balance.toLocaleString()} TIME</div>
+                                <div class="text-xs text-slate-400">${user.votingPower} voting power</div>
+                            </div>
+                            <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center font-bold">✓</div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="max-w-6xl mx-auto p-6">
+                    <!-- Main Stats -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <!-- Officials Card -->
+                        <div class="bg-slate-800 rounded-xl p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <div class="text-4xl font-bold text-emerald-400">33</div>
+                                    <div class="text-slate-400">Officials Govern You</div>
+                                </div>
+                                <button onclick="toggleLevel('all')" class="text-emerald-400 hover:text-emerald-300 text-sm cursor-pointer">
+                                    ${selectedLevel ? 'Hide' : 'View All'} →
+                                </button>
+                            </div>
+                            
+                            <div class="grid grid-cols-4 gap-2 text-center text-sm">
+                                <button onclick="toggleLevel('federal')" class="py-2 px-3 rounded-lg transition-all cursor-pointer ${selectedLevel === 'federal' ? 'bg-emerald-500 text-white' : 'bg-slate-700 hover:bg-slate-600'}">
+                                    <div class="font-bold">5</div>
+                                    <div class="text-xs">Federal</div>
+                                </button>
+                                <button onclick="toggleLevel('state')" class="py-2 px-3 rounded-lg transition-all cursor-pointer ${selectedLevel === 'state' ? 'bg-emerald-500 text-white' : 'bg-slate-700 hover:bg-slate-600'}">
+                                    <div class="font-bold">4</div>
+                                    <div class="text-xs">State</div>
+                                </button>
+                                <button onclick="toggleLevel('county')" class="py-2 px-3 rounded-lg transition-all cursor-pointer ${selectedLevel === 'county' ? 'bg-emerald-500 text-white' : 'bg-slate-700 hover:bg-slate-600'}">
+                                    <div class="font-bold">1</div>
+                                    <div class="text-xs">County</div>
+                                </button>
+                                <button onclick="toggleLevel('local')" class="py-2 px-3 rounded-lg transition-all cursor-pointer ${selectedLevel === 'local' ? 'bg-emerald-500 text-white' : 'bg-slate-700 hover:bg-slate-600'}">
+                                    <div class="font-bold">5</div>
+                                    <div class="text-xs">Local</div>
+                                </button>
+                            </div>
+                            
+                            ${selectedLevel ? `<div class="mt-4 max-h-60 overflow-y-auto">${officialsHtml}</div>` : ''}
+                        </div>
+
+                        <!-- Laws Card -->
+                        <div class="bg-slate-800 rounded-xl p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <div class="text-4xl font-bold text-emerald-400">12,847</div>
+                                    <div class="text-slate-400">Laws Apply to You</div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span class="text-slate-400">Federal</span>
+                                        <span>3,000</span>
+                                    </div>
+                                    <div class="w-full bg-slate-700 rounded-full h-2">
+                                        <div class="bg-blue-500 h-2 rounded-full" style="width: 23%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span class="text-slate-400">State</span>
+                                        <span>5,500</span>
+                                    </div>
+                                    <div class="w-full bg-slate-700 rounded-full h-2">
+                                        <div class="bg-purple-500 h-2 rounded-full" style="width: 43%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span class="text-slate-400">Local</span>
+                                        <span>4,347</span>
+                                    </div>
+                                    <div class="w-full bg-slate-700 rounded-full h-2">
+                                        <div class="bg-emerald-500 h-2 rounded-full" style="width: 34%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Agent Query -->
+                    <div class="bg-slate-800 rounded-xl p-6 mb-8">
+                        <h2 class="text-xl font-bold mb-4">Ask Your Agent</h2>
+                        <div class="flex gap-4">
+                            <input type="text" id="agentInput" placeholder="e.g., 'I want to start a coffee shop' or 'What if I move to Austin?'" 
+                                class="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-emerald-500"
+                                onkeydown="if(event.key === 'Enter') handleAgentQuery()">
+                            <button onclick="handleAgentQuery()" class="bg-emerald-500 hover:bg-emerald-600 px-6 py-3 rounded-lg font-bold cursor-pointer">
+                                Ask
+                            </button>
+                        </div>
+                        ${agentResponseHtml}
+                    </div>
+
+                    <!-- Local Opportunities -->
+                    <div class="bg-slate-800 rounded-xl p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-xl font-bold">Local Opportunities</h2>
+                            <span class="text-sm text-emerald-400">10% bonus for local allocation</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            ${opportunitiesHtml}
+                        </div>
+                    </div>
+
+                    <!-- TIME Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                        <div class="bg-slate-800 rounded-lg p-4 text-center">
+                            <div class="text-2xl font-bold text-emerald-400">${user.birthright.toLocaleString()}</div>
+                            <div class="text-sm text-slate-400">Birthright TIME</div>
+                        </div>
+                        <div class="bg-slate-800 rounded-lg p-4 text-center">
+                            <div class="text-2xl font-bold text-emerald-400">${user.balance.toLocaleString()}</div>
+                            <div class="text-sm text-slate-400">Total Balance</div>
+                        </div>
+                        <div class="bg-slate-800 rounded-lg p-4 text-center">
+                            <div class="text-2xl font-bold text-emerald-400">${user.staked}</div>
+                            <div class="text-sm text-slate-400">Staked</div>
+                        </div>
+                        <div class="bg-slate-800 rounded-lg p-4 text-center">
+                            <div class="text-2xl font-bold text-emerald-400">${user.votingPower}</div>
+                            <div class="text-sm text-slate-400">Voting Power</div>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="text-center mt-8 text-slate-500 text-sm">
+                        <p>Your Governance Agent • Democracy Earth Foundation</p>
+                        <p>NEAR Innovation Sandbox 2026 • Track: AI That Works For You</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Event handlers
+        function handleVerify() {
+            currentStep = 'verifying';
+            render();
+            
+            setTimeout(() => {
+                currentStep = 'discovering';
+                render();
+                
+                setTimeout(() => {
+                    const daysLived = Math.floor((Date.now() - new Date('1980-01-01').getTime()) / (1000 * 60 * 60 * 24));
+                    user = {
+                        verified: true,
+                        birthright: daysLived,
+                        balance: daysLived + 1247,
+                        staked: 500,
+                        votingPower: Math.floor(Math.sqrt(500))
+                    };
+                    governance = {
+                        jurisdiction: 'San Francisco, California, USA',
+                        officials: OFFICIALS,
+                        lawCounts: { federal: 3000, state: 5500, local: 4347, total: 12847 }
+                    };
+                    currentStep = 'dashboard';
+                    render();
+                }, 2000);
+            }, 1500);
+        }
+
+        function toggleLevel(level) {
+            selectedLevel = selectedLevel === level ? null : level;
+            render();
+        }
+
+        function handleAgentQuery() {
+            const input = document.getElementById('agentInput');
+            const query = input.value.toLowerCase();
+            
+            if (!query.trim()) return;
+            
+            if (query.includes('coffee') || query.includes('business') || query.includes('shop')) {
+                agentResponse = `<strong class="text-emerald-400">Starting a Coffee Shop in San Francisco</strong>
+
+<strong>Permits Required:</strong>
+• Business License — City Clerk (apply at sfgov.org)
+• Food Handler Permit — SF Health Dept
+• Building Permit — if renovating (Planning Dept)
+• Sign Permit — if exterior signage
+
+<strong>Key Officials:</strong>
+• Matt Dorsey (District 6 Supervisor) — votes on local zoning
+• Planning Commission — meets 2nd Tuesday monthly
+• Health Inspector — serves your area
+
+<strong>47 regulations apply to food service businesses</strong>
+
+<strong>Local Intelligence:</strong>
+• 3 coffee suppliers in the TIME network nearby
+• 4 existing coffee shops within 1 mile
+• Your neighborhood association is supportive of local business`;
+            } else if (query.includes('move') || query.includes('austin') || query.includes('relocat')) {
+                agentResponse = `<strong class="text-emerald-400">Relocation Impact Analysis</strong>
+
+Moving would change your governance significantly:
+
+<strong>If you move to Austin, TX:</strong>
+• Officials change: 33 → 29
+• Laws change: 12,847 → 8,234
+• State income tax: 13.3% → 0%
+• Property tax: 1.18% → 1.80%
+
+<strong>Network Impact:</strong>
+• Your current local connections: 47 people, 12 businesses
+• You'd lose access to current SF governance relationships
+
+<strong>Recommendation:</strong> Build Austin network before moving`;
+            } else if (query.includes('vote') || query.includes('election')) {
+                agentResponse = `<strong class="text-emerald-400">Upcoming Elections & Votes</strong>
+
+<strong>Next 30 Days:</strong>
+• City Council zoning vote — Feb 18 (affects District 6)
+• School Board meeting — Feb 22
+• State Assembly vote on housing bill — Feb 25
+
+<strong>Your Officials Up for Re-election (2026):</strong>
+• Governor Gavin Newsom
+• Your State Senator Scott Wiener
+
+<strong>Your Voting Power:</strong> ${user.votingPower} votes (√${user.staked} staked TIME)`;
+            } else {
+                agentResponse = `I can help you understand governance affecting your decisions.
+
+<strong>Try asking:</strong>
+• "I want to start a coffee shop"
+• "What if I move to Austin?"
+• "What votes are coming up?"
+• "Who approves permits in my area?"
+
+Your current governance: <strong>33 officials, 12,847 laws</strong> in San Francisco, CA.`;
+            }
+            
+            input.value = '';
+            render();
+        }
+
+        function handleAllocate(oppId) {
+            const amount = prompt('How much TIME to allocate?', '100');
+            if (amount && parseInt(amount) > 0) {
+                user.balance -= parseInt(amount);
+                alert(`Allocated ${amount} TIME to local opportunity!\n\n10% local bonus applied — ${Math.floor(parseInt(amount) * 0.1)} TIME extra goes to the recipient.`);
+                render();
+            }
+        }
+
+        // Initial render
+        render();
+    </script>
+</body>
+</html>
