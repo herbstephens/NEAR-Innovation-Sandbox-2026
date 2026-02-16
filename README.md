@@ -300,8 +300,6 @@ NEAR-Innovation-Sandbox-2026/
 
 ## Links
 
-- **The Great Reset**: [github.com/democracyearth/the-great-reset](https://github.com/democracyearth/the-great-reset)
-- **TIME Protocol**: [github.com/democracyearth/time-protocol](https://github.com/democracyearth/time-protocol)
 - **Democracy Earth**: [democracy.earth](https://democracy.earth)
 
 ---
