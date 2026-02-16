@@ -615,8 +615,6 @@ Democracy Earth has been building decentralized governance since 2015:
 ## Links
 
 - **This Repo**: github.com/herbstephens/NEAR-Innovation-Sandbox-2026
-- **The Great Reset**: github.com/democracyearth/the-great-reset
-- **TIME Protocol**: github.com/democracyearth/time-protocol
 - **Democracy Earth**: democracy.earth
 
 ---
