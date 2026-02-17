@@ -301,6 +301,7 @@ NEAR-Innovation-Sandbox-2026/
 ## Links
 
 - **Democracy Earth**: [democracy.earth](https://democracy.earth)
+- https://github.com/herbstephens/NEAR-Innovation-Sandbox-2026/blob/ea4e2c411bdaa01d26524824202a520e11635286/HACKATHON.md
 
 ---
 
